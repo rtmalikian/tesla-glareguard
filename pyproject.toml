@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tesla-glareguard"
+version = "0.1.0"
+description = "One-tap anti-dazzle side-mirror deflector for Tesla Model 3/Y/S/X/Cybertruck — compute exact mirror pan/tilt to steer brights glare away from your eyes"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Raphael Malikian", email = "rtmalikian@gmail.com" }]
+keywords = ["tesla", "fleet-api", "night-driving", "safety", "model-3", "model-y", "cybertruck", "open-source"]
+dependencies = [
+    "requests>=2.31",
+    "python-dotenv>=1.0",
+]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Home Automation",
+]
+
+[project.scripts]
+tgg = "tesla_glareguard.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/rtmalikian/tesla-glareguard"
+Issues = "https://github.com/rtmalikian/tesla-glareguard/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
